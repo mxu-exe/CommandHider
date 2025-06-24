@@ -13,6 +13,8 @@ public class CommandHider extends JavaPlugin {
         plugin = this;
         LOGGER = this.getComponentLogger();
 
+        saveDefaultConfig();
+
         LOGGER.info(MessageUtils.component("<gold>CommandHider successfully enabled!</gold>"));
     }
 
