@@ -1,5 +1,6 @@
 package com.umnirium.mc.commandhider;
 
+import com.umnirium.mc.commandhider.utils.MessageUtils;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -12,11 +13,11 @@ public class CommandHider extends JavaPlugin {
         plugin = this;
         LOGGER = this.getComponentLogger();
 
-        LOGGER.info("CommandHider successfully enabled!");
+        LOGGER.info(MessageUtils.component("<gold>CommandHider successfully enabled!</gold>"));
     }
 
     @Override
     public void onDisable() {
-        LOGGER.info("CommandHider successfully disabled!");
+        LOGGER.info(MessageUtils.component("<gold>CommandHider successfully disabled!</gold>"));
     }
 }
