@@ -1,1 +1,23 @@
 version: 1
+
+bypass-all-commands-permission: commandhider.bypass.*
+
+groups:
+  default:
+      inherit-groups: [vip]
+      bypass-permission: commandhider.bypass.default
+      commands:
+        - msg
+        - say
+  vip:
+      inherit-groups: [admin]
+      bypass-permission: commandhider.bypass.vip
+      commands:
+        - ban
+        - kick
+  admin:
+      inherit-groups: []
+      bypass-permission: commandhider.bypass.admin
+      commands:
+        - plugins
+        - version
