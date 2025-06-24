@@ -1,0 +1,7 @@
+name: CommandHider
+version: ${version}
+main: com.umnirium.mc.commandhider.CommandHider
+description: Hide any command you want !
+author: mxu-exe
+website: https://github.com/mxu-exe
+api-version: '1.21.6'
