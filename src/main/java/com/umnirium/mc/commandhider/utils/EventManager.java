@@ -3,8 +3,6 @@ package com.umnirium.mc.commandhider.utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
-import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,9 +15,7 @@ import java.util.Set;
 public class EventManager implements Listener {
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-
-        CommandHideManager.removePlayer(player);
+        CommandHideManager.removePlayer(event.getPlayer());
     }
 
     @EventHandler
@@ -29,8 +25,6 @@ public class EventManager implements Listener {
         Set<String> commands = CommandHideManager.setHiddenCommands(player);
 
         event.getCommands().removeAll(commands);
-
-        player.sendMessage(commands.toString());
     }
 
     @EventHandler
@@ -45,9 +39,8 @@ public class EventManager implements Listener {
 
         if (commands.contains(command)) {
             event.setCancelled(true);
-            
-            player.sendMessage(MiniMessage.miniMessage().deserialize("<red>Unknown or incomplete command, see below for error</red>\n<cmd><red><--[HERE]</red>",
-                    Placeholder.component("cmd", Component.text(command, NamedTextColor.RED, TextDecoration.UNDERLINED))));
+
+            player.sendMessage(MessageUtils.componentReplace("<red>Unknown or incomplete command, see below for error</red>\n<cmd><red><--[HERE]</red>", "cmd", Component.text(command, NamedTextColor.RED, TextDecoration.UNDERLINED)));
         }
     }
 }

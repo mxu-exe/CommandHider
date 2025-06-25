@@ -1,8 +1,6 @@
 package com.umnirium.mc.commandhider.utils;
 
-
 import org.bukkit.entity.Player;
-
 import java.util.*;
 
 public class CommandHideManager  {
