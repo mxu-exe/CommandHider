@@ -5,7 +5,8 @@ import java.util.*;
 
 public class CommandHideManager  {
     public static Map<Player, Set<String>> handledPlayers = new HashMap<>();
-    public static Map<String, GroupData> groups = ConfigManager.groups;
+
+    public static void refreshPlayers() {handledPlayers.clear();}
 
     public static void removePlayer(Player player) {
         handledPlayers.remove(player);
@@ -16,12 +17,13 @@ public class CommandHideManager  {
             return handledPlayers.get(player);
         }
 
+        Map<String, GroupData> groups = ConfigManager.groups;
         Set<String> commands = new HashSet<>();
         Set<String> groupsDone = new HashSet<>();
 
         for (String group : groups.keySet()) {
             if (!player.hasPermission(groups.get(group).bypassPermission())) {
-                setHiddenCommandsRecursive(group, commands, groupsDone);
+                setHiddenCommandsRecursive(groups, group, commands, groupsDone);
             }
         }
 
@@ -30,13 +32,13 @@ public class CommandHideManager  {
         return commands;
     }
 
-    private static void setHiddenCommandsRecursive(String group, Set<String> commands, Set<String> groupsDone) {
+    private static void setHiddenCommandsRecursive(Map<String, GroupData> groups, String group, Set<String> commands, Set<String> groupsDone) {
         if (!groupsDone.contains(group)) {
             commands.addAll(groups.get(group).commands());
             groupsDone.add(group);
 
             for (String inherit : groups.get(group).inherits()) {
-                setHiddenCommandsRecursive(inherit, commands, groupsDone);
+                setHiddenCommandsRecursive(groups, inherit, commands, groupsDone);
             }
         }
     }

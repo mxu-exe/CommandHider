@@ -17,6 +17,13 @@ public class ConfigManager {
         groups = getGroups();
     }
 
+    public static void reloadConfig() {
+        plugin.reloadConfig();
+
+        configVersion = getConfigVersion();
+        groups = getGroups();
+    }
+
     private static int getConfigVersion() {
         return plugin.getConfig().getInt("version");
     }
