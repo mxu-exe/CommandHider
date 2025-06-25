@@ -1,7 +1,5 @@
 version: 1
 
-bypass-all-commands-permission: commandhider.bypass.*
-
 groups:
   default:
       inherit-groups: [vip]
