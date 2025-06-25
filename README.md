@@ -2,6 +2,8 @@
 
 #### Hide your commands from players, as if they never existed
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K61H0NRI)
+
 ## Description
 
 **CommandHider** is a powerful Paper plugin that lets server administrators fully control which commands players can see or use. With fine-grained permission-based filtering, commands can be hidden entirely — no suggestions, no tab-complete hints, and no “unknown command” messages. To restricted users, they simply don’t exist.
