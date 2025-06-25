@@ -1,5 +1,12 @@
+# Do not edit this
 version: 1
 
+# Groups
+# Groups have a name 'default'
+# inherit-groups means the actual group will inherit all hidden commands from the groups in it
+# bypass-permission allows you to bypass and show the hidden commands
+# commands are the list of the hidden commands
+# You can create as many groups as you want
 groups:
   default:
       inherit-groups: [vip]
