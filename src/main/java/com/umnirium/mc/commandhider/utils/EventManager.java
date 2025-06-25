@@ -40,7 +40,7 @@ public class EventManager implements Listener {
         if (commands.contains(command)) {
             event.setCancelled(true);
 
-            player.sendMessage(MessageUtils.componentReplace("<red>Unknown or incomplete command, see below for error</red>\n<cmd><red><--[HERE]</red>", "cmd", Component.text(command, NamedTextColor.RED, TextDecoration.UNDERLINED)));
+            player.sendMessage(MessageUtils.componentReplace("<red>Unknown or incomplete command, see below for error</red>\n<cmd><red><--<italic>[HERE]</italic></red>", "cmd", Component.text(command, NamedTextColor.RED, TextDecoration.UNDERLINED)));
         }
     }
 }
