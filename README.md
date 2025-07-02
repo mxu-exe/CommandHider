@@ -6,7 +6,7 @@
 
 ## Description
 
-**CommandHider** is a powerful Paper plugin that lets server administrators fully control which commands players can see or use. With fine-grained permission-based filtering, commands can be hidden entirely — no suggestions, no tab-complete hints, and no “unknown command” messages. To restricted users, they simply don’t exist.
+**CommandHider** is a powerful Paper plugin that lets server administrators fully control which commands players can see or use. With fine-grained permission-based filtering, commands can be hidden entirely — no suggestions, no tab-complete hints. To restricted users, they simply don’t exist.
 
 Perfect for survival, roleplay, or custom servers where clean UX and tight command security matter.
 
